@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Instagram Home</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background-color: #fafafa;
+        }
+
+        /* Navbar */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 40px;
+            background-color: white;
+            border-bottom: 1px solid #dbdbdb;
+            position: sticky;
+            top: 0;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            font-family: cursive;
+        }
+
+        .nav-links a {
+            margin-left: 20px;
+            text-decoration: none;
+            color: black;
+            font-weight: 500;
+        }
+
+        /* Main Feed */
+        .container {
+            width: 500px;
+            margin: 30px auto;
+        }
+
+        .post {
+            background: white;
+            border: 1px solid #dbdbdb;
+            margin-bottom: 20px;
+            border-radius: 5px;
+        }
+
+        .post-header {
+            padding: 10px;
+            font-weight: bold;
+        }
+
+        .post img {
+            width: 100%;
+        }
+
+        .post-content {
+            padding: 10px;
+        }
+
+        .signup-link {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .signup-link a {
+            text-decoration: none;
+            color: #0095f6;
+            font-weight: bold;
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <div class="navbar">
+        <div class="logo">Instagram</div>
+        <div class="nav-links">
+            <a href="/">Home</a>
+            <a href="/signup">Signup</a>
+        </div>
+    </div>
+
+    <!-- Feed -->
+    <div class="container">
+
+        <div class="post">
+            <div class="post-header">mayur_dev</div>
+            <img src="https://picsum.photos/500/401" alt="post">
+            <div class="post-content">
+                ❤️ 89 Likes  
+                <p>Working on new project 💻🔥</p>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
