@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Add Product</title>
+
+<!-- Google Font -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 0;
+}
+
+/* Form Container */
+.form-container {
+  width: 900px;
+  background: white;
+  padding: 40px;
+  border-radius: 15px;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+}
+
+.form-container h2 {
+  text-align: center;
+  margin-bottom: 30px;
+  font-weight: 600;
+  color: #333;
+}
+
+/* Grid Layout */
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  margin-bottom: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #555;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  outline: none;
+  transition: 0.3s;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  border-color: #667eea;
+  box-shadow: 0 0 5px rgba(102,126,234,0.4);
+}
+
+textarea {
+  resize: none;
+}
+
+/* Full width elements */
+.full-width {
+  grid-column: span 2;
+}
+
+/* Submit Button */
+.submit-btn {
+  margin-top: 25px;
+  padding: 12px;
+  border: none;
+  border-radius: 30px;
+  background: #667eea;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.submit-btn:hover {
+  background: #5563d6;
+  transform: scale(1.03);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .form-container {
+    width: 95%;
+  }
+
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .full-width {
+    grid-column: span 1;
+  }
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="form-container">
+  <h2>Add New Product</h2>
+
+  <form action="/display" method="POST">
+    <div class="form-grid">
+
+      <div class="form-group">
+        <label>Product Name</label>
+        <input type="text" name="product_name" id="product_name" required>
+      </div>
+
+      <div class="form-group">
+        <label>Product ID</label>
+        <input type="text" name="product_id" id="product_id" required>
+      </div>
+
+      <div class="form-group">
+        <label>Category</label>
+        <select name="category" id="category">
+          <option>Electronics</option>
+          <option>Clothing</option>
+          <option>Home Appliances</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label>Brand</label>
+        <input type="text" name="brand" id="brand">
+      </div>
+
+      <div class="form-group">
+        <label>Price</label>
+        <input type="number" name="price" id="price">
+      </div>
+
+      <div class="form-group">
+        <label>Discount (%)</label>
+        <input type="number" name="discount" id="discount">
+      </div>
+
+      <div class="form-group">
+        <label>Stock Quantity</label>
+        <input type="number" name="stock_quantity" id="stock_quantity">
+      </div>
+
+      <div class="form-group">
+        <label>SKU</label>
+        <input type="text" name="sku" id="sku">
+      </div>
+
+      <div class="form-group">
+        <label>Weight (kg)</label>
+        <input type="text" name="weight" id="weight">
+      </div>
+
+      <div class="form-group">
+        <label>Color</label>
+        <input type="text" name="color" id="color">
+      </div>
+
+      <div class="form-group">
+        <label>Size</label>
+        <input type="text" name="size" id="size">
+      </div>
+
+      <div class="form-group">
+        <label>Release Date</label>
+        <input type="date" name="release_date" id="release_date">
+      </div>
+
+      <div class="form-group">
+        <label>Warranty (Months)</label>
+        <input type="number" name="warranty_months" id="warranty_months">
+      </div>
+
+      <div class="form-group">
+        <label>Product Image URL</label>
+        <input type="url" name="image_url" id="image_url">
+      </div>
+
+      <div class="form-group full-width">
+        <label>Description</label>
+        <textarea rows="4" name="description" id="description"></textarea>
+      </div>
+
+    </div>
+
+    <button type="submit" class="submit-btn full-width">Add Product</button>
+  </form>
+
+</div>
+
+</body>
+</html>

@@ -1,28 +1,28 @@
 const express = require('express');
 const app = express();
-app.set('view engine', 'ejs');
 
-app.use(express.static('public'));
+app.set('view engine', 'ejs');
+app.use(express.static('public/'));
+app.use(express.urlencoded({ extended: true }));
 
 // Home Page
 app.get('/', (req, res) => {
     res.render('home');
 });
 
-// Signup Page
-app.get('/signup', (req, res) => {
-    res.render('signup');
+// Products Page
+app.get('/products', (req, res) => {
+    res.render('products');
 });
 
-app.get('/dashboard', (req, res) => {
+// Display Page
+app.post('/display', (req, res) => {
 
-    console.log(req.query);
+    console.log(req.body);
 
-    const obj = {
-        data: req.query
-    };
+    const obj = { data: req.body };
 
-    res.render('dashboard', obj);
+    res.render('display', obj);
 });
 
 // 404 Page
