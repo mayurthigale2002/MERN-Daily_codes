@@ -1,0 +1,156 @@
+🏆 Practice Tasks
+
+✅ **Task 1:**
+
+Insert 5 employee records with fields:
+
+`name`, `city`, `skills` (array), and `role`.
+
+Example:
+
+```jsx
+{ name: "Yash, city: "Pune", skills: ["HTML", "CSS"], role: "Developer" }
+
+Ans :-   
+
+db.employee.insertMany([
+
+{ "name": "Mayur", 
+"city": "Pune", 
+"skills": ["HTML", "CSS"], 
+"role": "MERN Developer" },
+
+{ "name": "Yash",
+"city": "Nashik", 
+"skills": ["HTML", "CSS"], 
+"role": "WEB Developer" },
+
+{ "name": "Raj", 
+"city": "Mumbai", 
+"skills": ["HTML", "CSS"], 
+"role": "SOFTWARE Developer" },
+
+{ "name": "Patil", 
+"city": "Thane", 
+"skills": ["HTML", "CSS"], 
+"role": "Developer" },
+
+{ "name": "John", 
+"city": "Pune", 
+"skills": ["HTML", "CSS"], 
+"role": "PYTHON Developer" }
+
+])
+```
+
+---
+
+✅ **Task 2:**
+
+Use `$set` to change one employee’s role to `"Team Lead"`.
+
+Ans:- db.employee.updateOne({},{$set:{"Team Lead":"HR"}})
+
+---
+
+✅ **Task 3:**
+
+Use `$set` to update the `salary` of `"Priya"` to `55000`.
+
+Ans:-db.employee.updateOne({"name":"Priya"},{$set:{"salary":"55000"}})
+
+---
+
+✅ **Task 4:**
+
+Use `$unset` to remove the `"temporaryAddress"` field from all employees.
+
+Ans:- db.employee.updateMany({},{$unset:{"temporaryAddress":""}})
+
+---
+
+✅ **Task 5:**
+
+Use `$push` to add a new skill `"ReactJS"` into `"Amit"`’s skills array.
+
+Ans:-db.employee.updateOne({"name":"Amit"},{$pull:{skills:"ReactJS"}})
+
+---
+
+✅ **Task 6:**
+
+Use `$pull` to remove `"HTML"` from `"Priya"`’s skills array.
+
+Ans:-db.employee.updateMany({},{$set:{"exp":"5years"}})
+
+---
+
+✅ **Task 7:**
+
+Use `$set` to add a new field `"experience": 2` for all employees.
+
+Ans:-db.employee.updateMany({},{$set:{"experience":"2"}})
+
+---
+
+✅ **Task 8:**
+
+Use `$unset` to delete the `"oldSalary"` field from all employees.
+
+Ans:-db.employee.updateMany({},{$unset:{"oldSalary":""}})
+
+---
+
+✅ **Task 9:**
+
+Use `$push` to add `"MongoDB"` to `"Raj"`’s skills.
+
+Ans:-db.employee.updateOne({"name":"Raj"},{$push:{skills:"mongodb"}})
+
+---
+
+✅ **Task 10:**
+
+Use `$pull` to remove `"Intern"` from `"roles"` array of `"Suresh"`.
+
+Ans:-db.employee.updateOne({"name":"Suresh"},{$pull:{roles:"Intern"}})
+
+---
+
+✅ **Task 11:**
+
+Use `$set` to change `"John"`’s city from `"Pune"` to `"Mumbai"`.
+
+Ans:-db.employee.updateOne({"name":"John"},{$set:{"city":"Mumbai"}})
+
+---
+
+✅ **Task 12:**
+
+Use `$push` to add multiple skills `["NodeJS", "ExpressJS"]` to `"Yash"`’s skills using `$each`.
+
+Ans:-db.employee.updateOne({"name":"Yash"},{$push:{skills:["mongodb","Express js"]}})
+
+---
+
+✅ **Task 13:**
+
+Use `$set` to update `"status": "Active"` for all employees.
+
+Ans:-db.employee.updateMany({},{$set:{"status":"active"}})
+
+---
+
+✅ **Task 14:**
+
+Use `$unset` to remove `"Contact"` from one documents.
+
+Ans:-db.employee.updateOne({"name":"Raj"},{$unset:{"contact":""}})
+
+---
+
+✅ **Task 15:**
+
+Delete all employees whose `role` is `"Developer"`
+
+Ans:-db.employee.deleteMany({"role":"Developer"})

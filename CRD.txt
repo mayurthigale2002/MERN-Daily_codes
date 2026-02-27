@@ -1,0 +1,31 @@
+### ðŸ”¹ *INSERT*
+
+1. Insert one student record with your own details.
+command :- 
+db.user.insertOne({
+    name:"Mayur Thigale",
+    age:24,
+    email:"mayurthigale2002@gmail.com",
+    course:"MERNSTACK",
+    batch:"B902"
+})
+2. Insert two student records together using insertMany().
+command :-
+db.user.insertMany([
+  {
+    name: "Akil Ramchandra Jadhav",
+    age: 22,
+    email: "[akiljadhav@example.com](mailto:akiljadhav@example.com)",
+    course: "UI/UX Design",
+    batch: "B001",
+    mentor: "Pratik Sabale",
+    joiningDate: "2024-09-01",
+    fees: 12000,
+    status: "inactive",
+    skills: ["HTML", "CSS", "JavaScript"],
+    attendance: 90,
+  },
+  {
+    name: "Sushant Bhosale",
+    age: 21,
+    email: "[sushantbhosale@example.com](mailto:sushantbhosale@example.…

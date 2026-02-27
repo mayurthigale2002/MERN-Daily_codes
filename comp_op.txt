@@ -1,0 +1,100 @@
+compsrision op 
+lt, gt, lte, gte.
+in and nin
+
+logical op
+check two or more condition
+and, or, not, nor.
+
+
+
+
+db.emp.find({$not:{exp:{$lte:5}},)
+
+
+expis not equal to 5:
+db.emp.find({ experience: { $not: { $lte: 5 } } })
+
+
+//count method
+db.emp.countDocuments()
+
+//count of city pune
+db.emp.countDocuments({city:"pune"})
+
+//count of developer
+db.emp.countDocuments({role:"web devloper",city:"pune"})
+
+
+//sort method
+db.emp.find().sort()
+
+//name acc sort
+db.emp.find().sort({exp:1})
+
+
+//skip method
+db.emp.find().skip(3)
+
+
+//limit method
+db.emp.find().limit(5)
+
+
+//pagination
+db.emp.find().skip(3).limit(2)
+
+
+//$REGEX (regular expression text pattern matching )
+db.emp.find({name:{$regex:"^p"}})
+
+//end with A (into regex)
+db.emp.find({name:{$regex:"a$"}})
+
+//$type (check type)
+
+//$exists (exist or not)
+
+
+//aggregation pipeline
+
+MongoDB Aggregation Pipeline is used to process data in stages (like SQL GROUP BY, JOIN, etc.).
+
+//Basic Aggregation Syntax
+db.collection_name.aggregate([
+  { stage1 },
+  { stage2 },
+  { stage3 }
+])
+
+
+// stages of agrreegation
+1.grouping
+2.filtering
+3.sorting
+4.reshaping
+
+
+
+db.Users.aggregate([
+  { $match: { city: "Pune" } },
+  { $group: { _id: "$role", total: { $sum: 1 } } },
+  { $sort: { total: -1 } },
+  { $project: { _id: 0, role: "$_id", total: 1 } },
+  { $skip: 5 },
+  { $limit: 5 }
+])
+
+
+
+
+
+
+
+
+
+
+
+
+
+
